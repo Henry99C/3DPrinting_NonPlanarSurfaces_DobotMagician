@@ -22,10 +22,10 @@ if state == dType.DobotConnect.DobotConnect_NoError:
     dType.SetHOMEParams(api, 250, 0, 40, 0, isQueued=0)
     dType.SetHOMECmd(api, temp=0, isQueued=0)
     
-    # Se ajusta velocidad y aceleración de las articulaciones para la impresion
+    # Adjusts the speed and acceleration of the joints for printing
     dType.SetPTPJointParams(api, 50, 10, 50, 10, 50, 10, 50, 10, 0)
 
-    # Se configura la Interfaz E/S
+    # I/O Interface is configured
     dType.SetIOMultiplexing(api, 10, 1, 0)
     dType.SetIOMultiplexing(api, 11, 2, 0)
     dType.SetIOMultiplexing(api, 12, 1, 0)
@@ -35,11 +35,11 @@ if state == dType.DobotConnect.DobotConnect_NoError:
     dType.SetIODO(api, 12, 1, 0)
     dType.dSleep(100)
 
-    # Se inicia la extrusión de material
+    # Material extrusion begins
     dType.SetEMotor(api, 0, 1, 180, 0)
     dType.dSleep(100)
 
-    # Se ingresa la ruta de la superficie plana a imprimir
+    # Enter the path of the flat surface to be printed
     print_type = os.path.join(current_path, "data_non_planar")
     data_path = os.path.join(print_type, "data9")
     output_path = os.path.join(data_path, "output")
@@ -55,7 +55,7 @@ if state == dType.DobotConnect.DobotConnect_NoError:
     lastPosition = dType.GetPose(api)
     dType.SetPTPCmdEx(api, 2, lastPosition[0], lastPosition[1], lastPosition[2]+3, lastPosition[3], 0)
 
-    # Se apagan la interfaz E/S y se detiene la extrusión
+    # I/O interface is switched off and extrusion is stopped
     dType.SetIODO(api, 10, 0, 0)
     dType.SetIODO(api, 12, 0, 0)
     dType.SetEMotorS(api, 0, 0, 0, 0, 0)
