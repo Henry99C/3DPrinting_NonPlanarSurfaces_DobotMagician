@@ -3,12 +3,12 @@ import numpy as np
 
 def CalcTheta6(rd):
     # print("THETA 6")
-    # OPCIÓN 1
+    # OPTION 1
     s6 = rd[2][1]
     c6 = -rd[2][0]
     theta6_1 = np.rad2deg(np.arctan2(s6, c6))
     # print(f"Theta 6-1: {theta6_1}")
-    # OPCIÓN 2
+    # OPTION 2
     s6 = rd[1][2]*rd[0][0] - rd[0][2]*rd[1][0]
     c6 = rd[1][2]*rd[0][1] - rd[0][2]*rd[1][1]
     theta6_2 = np.rad2deg(np.arctan2(s6, c6))
@@ -19,22 +19,22 @@ def CalcTheta6(rd):
 
 def CalcTheta5(rd):
     # print("THETA 5")
-    # OPCIÓN 1
+    # OPTION 1
     s5 = -rd[2][2]
     c5 = np.sqrt(rd[2][0]**2 + rd[2][1]**2)
     theta5_1 = np.rad2deg(np.arctan2(s5, c5))
     # print(f"Theta 5-1: {theta5_1}")
-    # OPCIÓN 2
+    # OPTION 2
     s5 = -rd[2][2]
     c5 = -np.sqrt(rd[2][0]**2 + rd[2][1]**2)
     theta5_2 = np.rad2deg(np.arctan2(s5, c5))
     # print(f"Theta 5-2: {theta5_2}")
-    # OPCIÓN 3
+    # OPTION 3
     s5 = -rd[2][2]
     c5 = np.sqrt(rd[0][2]**2 + rd[1][2]**2)
     theta5_3 = np.rad2deg(np.arctan2(s5, c5))
     # print(f"Theta 5-3: {theta5_3}")
-    # OPCIÓN 4
+    # OPTION 4
     s5 = -rd[2][2]
     c5 = -np.sqrt(rd[0][2]**2 + rd[1][2]**2)
     theta5_4 = np.rad2deg(np.arctan2(s5, c5))
@@ -45,10 +45,10 @@ def CalcTheta5(rd):
 
 def CalcTheta1(x, y, l4, theta6):
     # print("THETA 1")
-    # OPCIÓN 1
+    # OPTION 1
     theta1_1 = np.rad2deg(2*np.arctan((-x + np.sqrt(x**2 + y**2 - (l4**2)*(np.sin(np.deg2rad(theta6))**2)))/(y - l4*np.sin(np.deg2rad(theta6)))))
     # print(f"Theta 1-1: {theta1_1}")
-    # OPCIÓN 2
+    # OPTION 2
     theta1_2 = np.rad2deg(2*np.arctan((-x - np.sqrt(x**2 + y**2 - (l4**2)*(np.sin(np.deg2rad(theta6))**2)))/(y - l4*np.sin(np.deg2rad(theta6)))))
     # print(f"Theta 1-2: {theta1_2}")
     theta1 = [theta1_1, theta1_2]
