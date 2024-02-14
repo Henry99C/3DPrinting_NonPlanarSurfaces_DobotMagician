@@ -1,4 +1,4 @@
-# Sistema de impresión 3d sobre superficies no planas mediante un brazo robótico
+# 3D printing system on non-planar surfaces using a robotic arm
 
 DobotDemoForPython64 is the demo of python package dynamic library files. It can be used directly by the python function to control Dobot Magician.
 
