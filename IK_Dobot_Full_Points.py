@@ -50,14 +50,14 @@ for i in range(0, len(coordinates)):
     angles.append([J1, J2, J3, J5, J6])
 
 # Output file path
-output_file_name = os.path.join(output_path, 'angles_values.txt')
+output_file_name = os.path.join(output_path, 'angle_values.txt')
 
-# Se almacenan los angulos
-with open(output_file_name, "w") as archivo_salida:
-    archivo_salida.write("J1 J2 J3 J5 J6\n")
+# Angles are stored
+with open(output_file_name, "w") as output_file:
+    output_file.write("J1 J2 J3 J5 J6\n")
 
-    for angulo in angulos:
-        angulo_str = " ".join([str(a) if isinstance(a, float) else f"[{', '.join(map(str, a))}]" for a in angulo])
-        archivo_salida.write(f"{angulo_str}\n")
+    for angle in angles:
+        angle_str = " ".join([str(a) if isinstance(a, float) else f"[{', '.join(map(str, a))}]" for a in angle])
+        output_file.write(f"{angle_str}\n")
 
 print(f"Los valores de los ángulos han sido almacenados en: '{nombre_archivo_salida}'")
