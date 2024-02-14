@@ -60,4 +60,4 @@ with open(output_file_name, "w") as output_file:
         angle_str = " ".join([str(a) if isinstance(a, float) else f"[{', '.join(map(str, a))}]" for a in angle])
         output_file.write(f"{angle_str}\n")
 
-print(f"Los valores de los ángulos han sido almacenados en: '{nombre_archivo_salida}'")
+print(f"The values of the angles have been stored in: '{output_file_name}'")
