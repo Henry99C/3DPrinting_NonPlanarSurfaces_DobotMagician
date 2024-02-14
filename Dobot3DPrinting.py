@@ -3,7 +3,7 @@ from moveDobot import moveJoint
 import os
 
 api = dType.load()
-ruta_actual = os.path.dirname(__file__)
+current_path = os.path.dirname(__file__)
 
 CON_STR = {
     dType.DobotConnect.DobotConnect_NoError: "DobotConnect_NoError",
@@ -40,20 +40,20 @@ if state == dType.DobotConnect.DobotConnect_NoError:
     dType.dSleep(100)
 
     # Se ingresa la ruta de la superficie plana a imprimir
-    tipo_impresion = os.path.join(ruta_actual, "data_non_planar")
-    ruta_data = os.path.join(tipo_impresion, "data9")
-    ruta_output = os.path.join(ruta_data, "output")
-    nombre_archivo = os.path.join(ruta_output, "valores_angulos.txt")
-    print(f"Imprimiendo :{nombre_archivo}")
+    print_type = os.path.join(current_path, "data_non_planar")
+    data_path = os.path.join(print_type, "data9")
+    output_path = os.path.join(data_path, "output")
+    file_name = os.path.join(output_path, "angle_values.txt")
+    print(f"Printing :{file_name}")
 
-    with open(nombre_archivo, 'r') as file:
+    with open(file_name, 'r') as file:
         next(file)
         for line in file:
             angles = line.split()
             moveJoint(float(angles[0]), float(angles[1]), float(angles[2]), float(angles[3]), float(angles[4]))
 
-    ultimaPosicion = dType.GetPose(api)
-    dType.SetPTPCmdEx(api, 2, ultimaPosicion[0], ultimaPosicion[1], ultimaPosicion[2]+3, ultimaPosicion[3], 0)
+    lastPosition = dType.GetPose(api)
+    dType.SetPTPCmdEx(api, 2, lastPosition[0], lastPosition[1], lastPosition[2]+3, lastPosition[3], 0)
 
     # Se apagan la interfaz E/S y se detiene la extrusión
     dType.SetIODO(api, 10, 0, 0)
