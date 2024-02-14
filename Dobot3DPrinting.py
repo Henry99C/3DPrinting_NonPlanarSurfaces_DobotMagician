@@ -1,3 +1,25 @@
+import DobotDllType as dType
+from moveDobot import moveJoint
+import os
+
+api = dType.load()
+ruta_actual = os.path.dirname(__file__)
+
+CON_STR = {
+    dType.DobotConnect.DobotConnect_NoError: "DobotConnect_NoError",
+    dType.DobotConnect.DobotConnect_NotFound: "DobotConnect_NotFound",
+    dType.DobotConnect.DobotConnect_Occupied: "DobotConnect_Occupied"}
+
+state = dType.ConnectDobot(api, "COM6", 115200)[0]
+
+print("Connect status:", CON_STR[state])
+
+if state == dType.DobotConnect.DobotConnect_NoError:
+
+    # Homing
+    print("Home...")
+
+    dType.SetHOMEParams(api, 250, 0, 40, 0, isQueued=0)
     dType.SetHOMECmd(api, temp=0, isQueued=0)
     
     # Se ajusta velocidad y aceleración de las articulaciones para la impresion
