@@ -3,29 +3,29 @@ import json
 from readObj import read_obj
 from viewer_path import plot_curved_path_vector
 
-# Se inicializa un arreglo para almacenar las coordenada y vectores
-coordenadas = []
-vectores = []
+# An array is initialized to store coordinates and vectors
+coordinates = []
+vectors = []
 
-# Se ingresa el offset para centrar la pieza
+# Enter the offset to center the part
 offsetX = 50
 offsetY = 50
 
 # Se ingresa la ruta de los archivos
-carpeta_actual = os.path.dirname(__file__)
-ruta_data = os.path.join(carpeta_actual, 'data7_3')
-ruta_output = os.path.join(ruta_data, 'output')
-nombre_archivo_json = os.path.join(ruta_data, "out_printpoints.json")
+current_path = os.path.dirname(__file__)
+data_path = os.path.join(current_path, 'data7_3')
+output_path = os.path.join(data_path, 'output')
+json_file_name = os.path.join(data_path, "out_printpoints.json")
 
-# Se cargan los puntos del JSON entregado por Compas Slicer
-with open(nombre_archivo_json, 'r') as archivo_json:
-    data = json.load(archivo_json)
+# The JSON points delivered by Compas Slicer are loaded
+with open(json_file_name, 'r') as json_file:
+    data = json.load(json_file)
 
-# Se ingresa el nombre del archivo de salida
-nombre_archivo_salida = os.path.join(ruta_output, 'coordenadas_vectores.txt')
+# Enter the name of the output file
+output_file_name = os.path.join(ruta_output, 'coordinates_vectors.txt')
 
 # Se almacenan las coordenadas y vectores del archvio JSON, en el respectivo arreglo
-with open(nombre_archivo_salida, 'w') as archivo_salida:
+with open(output_file_name, 'w') as output_file:
     archivo_salida.write("X Y Z i j k\n")
     for key, value in data.items():
 
