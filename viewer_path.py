@@ -115,7 +115,7 @@ def plot_planar_path(coordinates_transformed, increased_coordinates, type):
     else:
         ax1.plot(x_coords, y_coords, z_coords, c='orange')
         ax2.plot(x_coords_inc, y_coords_inc, z_coords_inc, linestyle='dashed', c='b')
-    ax1.set_title('Coordenadas Originales')
+    ax1.set_title('Originals Coordinates')
 
     ax1.set_xlabel('X')
     ax1.set_ylabel('Y')
@@ -125,7 +125,7 @@ def plot_planar_path(coordinates_transformed, increased_coordinates, type):
     ax1.set_ylim([np.min(y_coords), np.max(y_coords)])
     ax1.set_zlim([np.min(z_coords), np.max(z_coords)])
 
-    ax2.set_title('Coordenadas Aumentadas')
+    ax2.set_title('Augmented Coordinates')
 
     ax2.set_xlabel('X')
     ax2.set_ylabel('Y')
