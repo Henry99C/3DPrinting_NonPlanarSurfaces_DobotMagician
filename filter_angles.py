@@ -14,9 +14,9 @@ def possible_values(array, low_bound, upper_bound):
     unique_values = []
 
     # Angles are stored only once
-    for valor in filtered_values:
+    for value in filtered_values:
         if value not in unique_values:
-            unique_values.append(valor)
+            unique_values.append(value)
 
     return unique_values
 
@@ -55,7 +55,7 @@ def possible_values_J2_J3(j2, j3):
     # All combinations of [J2+J3, J2, J3] are stored
     for value_j2 in unique_values_j2:
         for value_j3 in unique_values_j3:
-            j23.append([value_j2+valor_j3, value_j2, value_j3])
+            j23.append([value_j2+value_j3, value_j2, value_j3])
 
     # Values of None are assigned to J23_filtering, J2, J3 as a precaution that there is no solution.
     filtered_values_j23 = None
@@ -71,4 +71,3 @@ def possible_values_J2_J3(j2, j3):
             break
 
     return J2, J3, filtered_values_j23
-
