@@ -3,17 +3,17 @@ import numpy as np
 from readObj import read_obj
 from viewer_path import plot_curved_path_vector
 
-# Se inicializan arreglos para almacener los valores originales y editados
-coordenadas_originales = []
-vectores_originales = []
-coordenadas_editadas_1 = []
-vectores_editados_1 = []
-coordenadas_editadas_2 = []
-vectores_editados_2 = []
+# Arrays are initialized to store the original and edited values
+original_coordinates = []
+original_vectors = []
+coordinates_edited_1 = []
+vectors_edited_1 = []
+coordinates_edited_2 = []
+vectors_edited_2 = []
 
-# Rutas de los archivos
-carpeta_actual = os.path.dirname(__file__)
-ruta_salida = os.path.join(carpeta_actual, 'output')
+# File paths
+current_path = os.path.dirname(__file__)
+output_path = os.path.join(current_path, 'output')
 nombre_archivo_entrada = os.path.join(ruta_salida, 'puntos_editables.txt')
 
 # Se abstraen las coordenadas y los vectores del archivo puntos editables
