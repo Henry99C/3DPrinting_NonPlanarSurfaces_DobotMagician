@@ -53,7 +53,7 @@ with open(output_file_name, 'w') as output_file:
         line = f"{x:.4f}, {y:.4f}, {z:.4f}, {i:.4f}, {j:.4f}, {k:.4f}\n"
         output_file.write(line)
 
-print(f"The editable coordinates and vectors have been stored in: {nombre_archivo_salida}.")
+print(f"The editable coordinates and vectors have been stored in: {output_file_name}.")
 
 vertices, triangles = read_obj(os.path.join(data_path, 'custom_base.obj'), offsetX, offsetY)
 plot_curved_path_vector(coordinates, vectors, vertices, triangles, type='plot', base_view=True)
