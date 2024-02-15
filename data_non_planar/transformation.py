@@ -79,16 +79,16 @@ for coordinate in coordinates:
     coordinate_transformed = np.dot(BST, coordenada)
     coordinates_transformed.append([coordinate_transformed[0], coordinate_transformed[1], coordinate_transformed[2]])
 
-output_file_name = os.path.join(output_path, 'coordinatesTransformed_frame.txt')
+output_file_name = os.path.join(output_path, 'coordinatesTransformed_frames.txt')
 
-# almacenan los marcos y las coordenadas transformadas
-with open(nombre_archivo_salida, 'w') as archivo_salida:
-    for coordenada, rotacion in zip(coordenadas_transformadas, matriz_rotacion):
-        rotacion_formateada = ", ".join([f"[{columna[0]}, {columna[1]}, {columna[2]}]" for columna in rotacion])
-        archivo_salida.write(f"{coordenada[0]}, {coordenada[1]}, {coordenada[2]}, [{rotacion_formateada}]\n")
+# The transformed frames and coordinates are stored
+with open(output_file_name, 'w') as output_file:
+    for coordinate, rotation in zip(coordinates_transformed, rotation_matrix):
+        rotation_formatted = ", ".join([f"[{row[0]}, {row[1]}, {row[2]}]" for row in rotation])
+        output_file.write(f"{coordinate[0]}, {coordinate[1]}, {coordinate[2]}, [{rotation_formatted}]\n")
 
-print(f"Las coordenadas transformadas y las matrices de rotacion han sido almacenadas en: '{nombre_archivo_salida}'.")
+print(f"The transformed coordinates and the rotation matrices have been stored in: '{output_file_name}'.")
 
-vertices, triangulos = read_obj(os.path.join(ruta_data, 'custom_base.obj'), offsetX, offsetY)
+vertices, triangles = read_obj(os.path.join(data_path, 'custom_base.obj'), offsetX, offsetY)
 
-plot_curved_path_rotation_matrix(coordenadas, matriz_rotacion, vertices, triangulos, type='plot')
+plot_curved_path_rotation_matrix(coordinates, rotation_matrix, vertices, triangles, type='plot')
