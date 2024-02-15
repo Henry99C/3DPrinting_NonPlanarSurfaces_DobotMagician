@@ -1,5 +1,5 @@
 from inverse_kinematic_equations import CalcTheta1, CalcTheta2, CalcTheta3, CalcTheta5, CalcTheta6
-from angle_filter import possible_values, possible_values_J2_J3
+from filter_angles import possible_values, possible_values_J2_J3
 import os
 
 # An empty matrix is initialized to store coordinates, angles and frames.
@@ -16,10 +16,10 @@ l4 = 79.5
 
 # Enter the path to the files
 current_path = os.path.dirname(__file__)
-print_type = os.path.join(current_path, 'data_non_planar')
-data_path = os.path.join(print_type, 'data8')
+print_type = os.path.join(current_path, 'data_planar')
+data_path = os.path.join(print_type, 'data1')
 output_path = os.path.join(data_path, 'output')
-input_file_name = os.path.join(output_path, 'coordinatesTransformed_frames.txt')
+input_file_name = os.path.join(output_path, 'coordinatesIncreasedTransformed.txt')
 
 # The coordinates and frames are stored in the matrices
 with open(input_file_name, 'r') as input_file:
