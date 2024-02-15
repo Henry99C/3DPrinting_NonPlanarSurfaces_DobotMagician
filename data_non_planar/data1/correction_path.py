@@ -14,7 +14,7 @@ vectors_edited_2 = []
 # File paths
 current_path = os.path.dirname(__file__)
 output_path = os.path.join(current_path, 'output')
-nombre_archivo_entrada = os.path.join(ruta_salida, 'puntos_editables.txt')
+input_file_name = os.path.join(ruta_salida, 'puntos_editables.txt')
 
 # Se abstraen las coordenadas y los vectores del archivo puntos editables
 with open(nombre_archivo_entrada, 'r') as archivo_entrada:
