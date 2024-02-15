@@ -65,21 +65,21 @@ with open(output_file_name, 'w') as output_file:
         rotation_formatted = ", ".join([f"[{row[0]}, {row[1]}, {row[2]}]" for row in rotation])
         output_file.write(f"{coordinate[0]}, {coordinate[1]}, {coordinate[2]}, [{rotation_formatted}]\n")
 
-print(f"The coordinates and the rotation matrices have been stored in: '{nombre_archivo_salida}'.")
+print(f"The coordinates and the rotation matrices have been stored in: '{output_file_name}'.")
 
-# Se define la matriz de transformación (BST: Base Slicer Transform)
+# The transformation matrix is defined (BST: Base Slicer Transform)
 BST = np.array([[1, 0, 0, 79+100+110],
                 [0, 1, 0, 0],
                 [0, 0, 1, 32],
                 [0, 0, 0, 1]])
 
-# Se aplica la transformación a las coordenadas
-for coordenada in coordenadas:
-    coordenada = [coordenada[0], coordenada[1], coordenada[2], 1]
-    coordenada_transformada = np.dot(BST, coordenada)
-    coordenadas_transformadas.append([coordenada_transformada[0], coordenada_transformada[1], coordenada_transformada[2]])
+# The transformation is applied to the coordinates
+for coordinate in coordinates:
+    coordinate = [coordinate[0], coordinate[1], coordinate[2], 1]
+    coordinate_transformed = np.dot(BST, coordenada)
+    coordinates_transformed.append([coordinate_transformed[0], coordinate_transformed[1], coordinate_transformed[2]])
 
-nombre_archivo_salida = os.path.join(ruta_output, 'coordenadasTransformadas_marcos.txt')
+output_file_name = os.path.join(output_path, 'coordinatesTransformed_frame.txt')
 
 # almacenan los marcos y las coordenadas transformadas
 with open(nombre_archivo_salida, 'w') as archivo_salida:
