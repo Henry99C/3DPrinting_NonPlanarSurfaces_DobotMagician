@@ -9,3 +9,9 @@
 </div>
 
 ## Workflow for 3D printing on non-planar surfaces
+
+<div align=center>
+
+<img src="images/Worflow_3DPrinting_base.png" width="500" height="350" />
+
+</div>
