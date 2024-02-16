@@ -1,1 +1,0 @@
-Tratando de replicar lo que hice con el 6_3
