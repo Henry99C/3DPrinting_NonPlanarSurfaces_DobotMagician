@@ -18,10 +18,10 @@
 
 </div>
 
-<p>In the workflow for flat surface printing, there are 5 fundamental processes: CAD, lamination, post-processing, calculation of inverse kinematics and 3D printing. In this sense, initially the digital model of the part or surface to be printed is made, using CAD software such as Solidworks, Blender or other, where the file is saved in STL format. Subsequently, the part is laminated in a traditional 3D printing software, such as Ultimaker Cura, from which a g-code is obtained, with the positions, speeds and extrusion material. After that, the post-processing is performed, in which the coordinates of the g-code must be abstracted and a set of operations must be performed in order to finally calculate the angles of the joints and send them to the robot to perform the 3D printing.</p>
+<p>In the workflow for non-planar printing on surfaces, initially the digital model of the surface and the part to be laminated is made, which must be generated as surfaces and the lower part of the part to be laminated must have the cut of the surface on which it will be printed. Then, the lamination process is performed using the script provided in the Compas Slicer Github from which a JSON file is obtained with the vectors and printing points. Subsequently, post-processing is performed in which the information is abstracted from the file and a set of operations are performed. Finally, the angles of each joint are loaded into the robot for 3D printing.</p>
 
 <div align=center>
 
-<img src="images/Worflow_3DPrinting_base.png"/>
+<img src="images/Worflow_3DPrinting_geom.png"/>
 
 </div>
