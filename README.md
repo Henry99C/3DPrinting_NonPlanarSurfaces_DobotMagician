@@ -10,6 +10,8 @@
 
 ## Workflow for 3D printing on non-planar surfaces
 
+<p>In the workflow for flat surface printing, there are 5 fundamental processes: CAD, lamination, post-processing, calculation of inverse kinematics and 3D printing. In this sense, initially the digital model of the part or surface to be printed is made, using CAD software such as Solidworks, Blender or other, where the file is saved in STL format. Subsequently, the part is laminated in a traditional 3D printing software, such as Ultimaker Cura, from which a g-code is obtained, with the positions, speeds and extrusion material. After that, the post-processing is performed, in which the coordinates of the g-code must be abstracted and a set of operations must be performed in order to finally calculate the angles of the joints and send them to the robot to perform the 3D printing.</p>
+
 <div align=center>
 
 <img src="images/Worflow_3DPrinting_base.png"/>
