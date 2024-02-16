@@ -9,11 +9,11 @@ vectors = []
 
 # Enter the offset to center the part
 offsetX = 50
-offsetY = 50
+offsetY = 60
 
 # Se ingresa la ruta de los archivos
 current_path = os.path.dirname(__file__)
-data_path = os.path.join(current_path, 'data7_3')
+data_path = os.path.join(current_path, 'data2')
 output_path = os.path.join(data_path, 'output')
 json_file_name = os.path.join(data_path, "out_printpoints.json")
 
@@ -47,7 +47,7 @@ output_file_name = os.path.join(output_path, 'editable_points.txt')
 # Store each point and its corresponding vector with offset in a file for postprocessing
 with open(output_file_name, 'w') as output_file:
     output_file.write("X Y Z i j k\n")
-    for coord, vec in zip(coordenadas, vectores):
+    for coord, vec in zip(coordinates, vectors):
         x, y, z = coord
         i, j, k = vec
         line = f"{x:.4f}, {y:.4f}, {z:.4f}, {i:.4f}, {j:.4f}, {k:.4f}\n"
