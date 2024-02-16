@@ -12,6 +12,6 @@
 
 <div align=center>
 
-<img src="images/Worflow_3DPrinting_base.png" width="500" height="350" />
+<img src="images/Worflow_3DPrinting_base.png"/>
 
 </div>
